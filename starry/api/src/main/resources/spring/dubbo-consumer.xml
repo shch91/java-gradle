@@ -10,6 +10,6 @@
     <dubbo:registry address="zookeeper://localhost:2181" />
 
 
-    <dubbo:reference id="demoService" check="false" interface="shch91.inter.DemoService"/>
+    <dubbo:reference id="demoService" check="true" interface="shch91.inter.DemoService"/>
 
 </beans>
