@@ -9,8 +9,7 @@
 
     <dubbo:registry address="zookeeper://localhost:2181" />
 
-    <!-- generate proxy for the remote service, then demoService can be used in the same way as the
-    local regular interface -->
-    <dubbo:reference id="localDemoService" check="false" interface="shch91.inter.DemoService"/>
+
+    <dubbo:reference id="demoService" check="false" interface="shch91.inter.DemoService"/>
 
 </beans>
