@@ -1,4 +1,7 @@
 rootProject.name = 'starry'
 include 'common'
 include 'api'
+include 'repo'
+include 'inter'
+include 'service'
 

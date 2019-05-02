@@ -47,6 +47,7 @@ subprojects {
     dependencies {
         testCompile('org.springframework.boot:spring-boot-starter-test')
         compile('org.springframework.boot:spring-boot-starter')
+        compile group: 'com.alibaba', name: 'dubbo', version: '2.6.6'
     }
 
     //这里一定得要。在多模块下，不然编译失败，因为不会把信赖模块给打包。
