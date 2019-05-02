@@ -1,3 +1,4 @@
 rootProject.name = 'starry'
 include 'common'
+include 'api'
 
