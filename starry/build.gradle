@@ -1,16 +1,56 @@
-plugins {
-    id 'java'
+//应用于gradle 编译
+buildscript {
+    //定义
+    ext {
+        springBootVersion = "2.0.5.RELEASE"
+    }
+    repositories {
+        //maven 中央仓库
+        mavenCentral()
+    }
+
+    dependencies {
+        // 指定gradle spring boot plugin 版本 用于spring boot 版本依赖控制
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
 }
 
-group 'com.shch91'
-version '1.0-SNAPSHOT'
+// 所有子项目的通用配置
+subprojects {
 
-sourceCompatibility = 1.8
+    //指定中央仓库 项目使用
+    repositories {
+        //maven 中央仓库
+        mavenCentral()
+    }
 
-repositories {
-    mavenCentral()
-}
+    //应用插件
+    apply plugin: 'java'
 
-dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+    apply plugin: 'org.springframework.boot'
+
+    //用于spring boot 版本jar依赖
+    apply plugin: 'io.spring.dependency-management'
+
+    //指定jdk版本
+    sourceCompatibility = 1.8
+
+    //设置group id
+    group 'com.project'
+
+    //设置版本
+    version '1.0.0'
+
+    description 'projec'
+
+    //依赖
+    dependencies {
+        testCompile('org.springframework.boot:spring-boot-starter-test')
+        compile('org.springframework.boot:spring-boot-starter')
+    }
+
+    //这里一定得要。在多模块下，不然编译失败，因为不会把信赖模块给打包。
+    jar {
+        enabled = true
+    }
 }
