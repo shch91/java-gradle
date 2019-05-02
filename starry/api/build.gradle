@@ -17,11 +17,11 @@ dependencies {
 
 dependencies {
     compile project(":common")
-    
+
     compile ("org.springframework.boot:spring-boot-starter-web")
-    
+
     compile group: 'com.rabbitmq', name: 'amqp-client', version: '5.7.0'
     
-    
+    compile ("com.ldy:inter:0.0.1-SNAPSHOT")
 
 }

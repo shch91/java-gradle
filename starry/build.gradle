@@ -5,6 +5,9 @@ buildscript {
         springBootVersion = "2.0.5.RELEASE"
     }
     repositories {
+
+
+        maven { url 'file:/Users/shch/.m2/repository'} //使用file协议，本地仓库
         //maven 中央仓库
         mavenCentral()
     }
@@ -20,13 +23,17 @@ subprojects {
 
     //指定中央仓库 项目使用
     repositories {
+
+        maven { url 'file:/Users/shch/.m2/repository'} //使用file协议，本地仓库
         //maven 中央仓库
         mavenCentral()
     }
 
     //应用插件
-    apply plugin: 'java'
 
+    apply plugin: 'java-library'
+    apply plugin: 'maven-publish'
+    apply plugin: 'java'
     apply plugin: 'org.springframework.boot'
 
     //用于spring boot 版本jar依赖
@@ -36,12 +43,12 @@ subprojects {
     sourceCompatibility = 1.8
 
     //设置group id
-    group 'com.project'
-
+    group 'com.shch'
+    
     //设置版本
-    version '1.0.0'
+    version '0.0.1-SNAPSHOT'
 
-    description 'projec'
+    description 'java-gradle'
 
     //依赖
     dependencies {
