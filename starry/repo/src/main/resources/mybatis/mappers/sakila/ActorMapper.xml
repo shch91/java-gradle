@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ActorMapper">
+
+    <!-- 开启基于redis的二级缓存 -->
+    <!--<cache type="RedisCache"/>-->
+    <sql id="allColumn">
+        actor_id ,first_name,last_name,last_update
+    </sql>
+
+    <!--<resultMap id="actor" type="Actor">-->
+        <!--<result column="actor_id" property="actorId"/>-->
+        <!--<result column="first_name" property="firstName"/>-->
+        <!--<result column="last_name" property="lastName"/>-->
+        <!--<result column="last_update" property="lastUpdate"/>-->
+    <!--</resultMap>-->
+
+    <select id="select" resultType="Actor">
+       SELECT * FROM actor WHERE actor_id = #{actorId} LIMIT 1
+   </select>
+
+    <update id="update" parameterType="Actor" flushCache="true">
+       UPDATE actor SET first_name = #{firstName}, last_name = #{lastName} WHERE actor_id = #{actorId} LIMIT 1
+   </update>
+
+    <insert id="insert" useGeneratedKeys="true" parameterType="Actor">
+       insert into actor (actor_id, first_name,last_name,last_update) values
+        (#{actorId}, #{firstName}, #{lastName}, current_timestamp())
+
+    </insert>
+
+
+
+    <!--
+       first_name=#{firstName},last_name=#{lastName}, last_update=current_timestamp()
+    -->
+    <insert id="insertOrUpdate"  useGeneratedKeys="true" parameterType="Actor">
+       insert into test (actor_id, first_name,last_name,last_update) values
+        (#{actorId}, #{firstName}, #{lastName}, current_timestamp())
+         ON DUPLICATE KEY UPDATE
+          first_name= values(first_name), last_name=values(last_name), last_update=current_timestamp()
+
+   </insert>
+
+</mapper>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="TmpMapper">
+
+    <!-- 开启基于redis的二级缓存 -->
+    <!--<cache type="RedisCache"/>-->
+     <sql id="allColumn">
+          emp_no,salary,from_date,to_date
+     </sql>
+
+   <insert id="addBatch"  parameterType="java.util.List">
+       insert into salary ( emp_no,salary,from_date,to_date)
+       values
+
+       <foreach collection="list" item="item" index="index" separator=",">
+
+            (#{item.empNo},#{item.salary},#{item.fromDate},#{item.toDate})
+       </foreach>
+
+   </insert>
+
+    <insert id="add" parameterType="Salary">
+       insert into salary ( emp_no,salary,from_date,to_date)
+       values (#{empNo},#{salary},#{fromDate},#{toDate})
+   </insert>
+
+    <select id="getByEmpNo" parameterType="string">
+        select <include refid="allColumn"/>
+        from salary
+        where  emp_no=#{empNo}
+    </select>
+
+    <select id="allEmpNo" >
+        select  distinct(emp_no)
+        from salary
+    </select>
+
+    <select id="getAll" resultType="Salary">
+        select to_date ,salary ,from_date,emp_no
+        from  salary
+          limit 1,10000
+    </select>
+</mapper>

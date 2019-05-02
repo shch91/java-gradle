@@ -43,7 +43,7 @@ subprojects {
     sourceCompatibility = 1.8
 
     //设置group id
-    group 'com.shch'
+    group 'com.starry'
     
     //设置版本
     version '0.0.1-SNAPSHOT'
@@ -53,8 +53,16 @@ subprojects {
     //依赖
     dependencies {
         testCompile('org.springframework.boot:spring-boot-starter-test')
+        
         compile('org.springframework.boot:spring-boot-starter')
+        
         compile group: 'com.alibaba', name: 'dubbo', version: '2.6.6'
+
+        compile group: 'org.projectlombok', name: 'lombok', version: '1.18.6'
+
+        compile group: 'org.mybatis', name: 'mybatis', version: '3.5.1'
+
+
     }
 
     //这里一定得要。在多模块下，不然编译失败，因为不会把信赖模块给打包。

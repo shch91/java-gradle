@@ -5,24 +5,22 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.cache.annotation.EnableCaching;
+import org.springframework.context.annotation.Import;
 import org.springframework.context.annotation.ImportResource;
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.web.client.RestTemplate;
 
-
-
 @EnableAsync
 @EnableCaching
 @EnableScheduling
 @SpringBootApplication
-@ImportResource(locations={"classpath:dubbo-consumer.xml"})
-public class Shch91Application {
-
-    private static final String SS="test";
+@ImportResource(locations={"classpath:spring/spring.xml"})
+@Import(value = {ServiceApplication.class})
+public class StarryApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(Shch91Application.class, args);
+        SpringApplication.run(StarryApplication.class, args);
     }
 
     @Bean
@@ -30,10 +28,6 @@ public class Shch91Application {
     public RestTemplate restTemplate() {
         return new RestTemplate();
     }
-
-
-
-
 
 
 
