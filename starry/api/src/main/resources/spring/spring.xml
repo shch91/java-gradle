@@ -43,4 +43,6 @@
     <import resource="dubbo-consumer.xml"/>
 
     <import resource="dubbo-provider.xml"/>
+
+    <import resource="zookeeper-curator.xml"/>
 </beans>
