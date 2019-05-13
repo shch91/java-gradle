@@ -62,6 +62,14 @@ subprojects {
 
         compile group: 'org.mybatis', name: 'mybatis', version: '3.5.1'
 
+        compile group: 'com.alibaba', name: 'druid', version: '1.1.16'
+
+        compile group: 'org.mybatis', name: 'mybatis', version: '3.5.1'
+
+        compile group: 'org.mybatis', name: 'mybatis-spring', version: '2.0.1'
+
+        compile group: 'org.springframework', name: 'spring-jdbc', version: '5.1.7.RELEASE'
+
 
     }
 

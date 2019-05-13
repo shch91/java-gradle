@@ -1,15 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:p="http://www.springframework.org/schema/p"
-       xmlns:context="http://www.springframework.org/schema/context"
-       xmlns:tx="http://www.springframework.org/schema/tx"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-       http://www.springframework.org/schema/beans/spring-beans.xsd
-		http://www.springframework.org/schema/context
-		http://www.springframework.org/schema/context/spring-context.xsd
-		http://www.springframework.org/schema/tx
-		http://www.springframework.org/schema/tx/spring-tx.xsd">
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!-- 引入项目配置文件 -->
     <!-- <context:property-placeholder location="classpath:config/*.properties"/>-->
@@ -23,25 +16,12 @@
     </bean>
 
 
-    <!-- 默认的注解映射的支持 -->
-    <context:annotation-config />
-
-    <!-- 自动扫描注解的bean -->
-    <context:component-scan base-package="shch91"/>
-
-     <!--配置文件-->
-    <import resource="spring-mybatis.xml"/>
-    <import resource="spring-druid.xml"/>
-
     <import resource="spring-bean.xml"/>
     <import resource="spring-aop.xml"/>
-
     <import resource="spring-redis.xml"/>
 
     <!--dubbo-->
-
     <import resource="dubbo-consumer.xml"/>
-
     <import resource="dubbo-provider.xml"/>
 
     <import resource="zookeeper-curator.xml"/>

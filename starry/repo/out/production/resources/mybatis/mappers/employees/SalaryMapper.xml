@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="SalaryMapper">
+<mapper namespace="shch91.repo.mapper.employees.SalaryMapper">
 
     <!-- 开启基于redis的二级缓存 -->
     <!--<cache type="RedisCache"/>-->
@@ -10,12 +10,12 @@
          emp_no,salary,from_date,to_date
      </sql>
 
-   <insert id="add" parameterType="Salary">
+   <insert id="add" parameterType="shch91.repo.daoentity.Salary">
        insert into salaries ( emp_no,salary,from_date,to_date)
        values (#{empNo},#{salary},#{fromDate},#{toDate})
    </insert>
 
-    <select id="getByEmpNo" parameterType="string" resultType="Salary">
+    <select id="getByEmpNo" parameterType="string" resultType="shch91.repo.daoentity.Salary">
         select <include refid="allColumn"/>
         from  salaries
         where  emp_no=#{empNo}
@@ -26,7 +26,7 @@
         from  salaries
     </select>
 
-    <select id="getAll" resultType="Salary">
+    <select id="getAll" resultType="shch91.repo.daoentity.Salary">
         select to_date ,salary ,from_date,emp_no
         from salaries
 
