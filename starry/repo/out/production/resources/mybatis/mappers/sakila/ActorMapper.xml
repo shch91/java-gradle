@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="shch91.repo.mapper.employees.ActorMapper">
+<mapper namespace="shch91.repo.mapper.sakila.ActorMapper">
 
     <!-- 开启基于redis的二级缓存 -->
     <!--<cache type="RedisCache"/>-->
