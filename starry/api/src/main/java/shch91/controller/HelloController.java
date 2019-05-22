@@ -6,14 +6,10 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.base.Strings;
 import com.google.common.collect.Lists;
 import lombok.extern.slf4j.Slf4j;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
-
-import org.springframework.scheduling.annotation.Async;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.transaction.annotation.Transactional;
-
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -23,13 +19,11 @@ import shch91.repo.daoentity.Salary;
 import shch91.repo.mapper.employees.SalaryMapper;
 import shch91.repo.mapper.employees.TmpMapper;
 import shch91.repo.mapper.sakila.ActorMapper;
-
-
+import shch91.request.User;
 import javax.annotation.Resource;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Vector;
-import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
@@ -135,18 +129,14 @@ public class HelloController {
 
     @RequestMapping("/dubbo")
     @ResponseBody
-    public String testfdsa() throws ExecutionException, InterruptedException {
+    public User testfdsa(){
 
-           String fd=fdsa();
+        User str=demoService.sayHello("dubbo");
 
-
-        return "fsdas";
+        log.info(JSON.toJSONString(str));
+        return str;
 
     }
 
-    @Async
-    public String fdsa() throws ExecutionException, InterruptedException {
-        CompletableFuture<String> str=demoService.sayHello("dubbo");
-        return str.get();
-    }
+
 }
