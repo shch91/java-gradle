@@ -23,6 +23,7 @@ import shch91.request.User;
 import javax.annotation.Resource;
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Set;
 import java.util.Vector;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
@@ -135,6 +136,18 @@ public class HelloController {
 
         log.info(JSON.toJSONString(str));
         return str;
+
+    }
+
+
+    @RequestMapping("/set")
+    @ResponseBody
+    public Set<Integer> fds(){
+
+        Set<Integer> ret=demoService.getSetInteger();
+
+        log.info(JSON.toJSONString(ret));
+        return ret;
 
     }
 
