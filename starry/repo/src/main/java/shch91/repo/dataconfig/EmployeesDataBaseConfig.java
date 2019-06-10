@@ -7,7 +7,6 @@ import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
@@ -24,7 +23,6 @@ import java.sql.SQLException;
  * @Description: 主数据源配置类
  */
 @Data
-@EnableConfigurationProperties
 @Configuration
 @ConfigurationProperties(prefix = "primary.datasource.druid")
 @MapperScan(basePackages = EmployeesDataBaseConfig.PACKAGE, sqlSessionFactoryRef = "primarySqlSessionFactory")

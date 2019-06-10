@@ -13,8 +13,6 @@ import org.springframework.context.annotation.Import;
 import org.springframework.context.annotation.ImportResource;
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.scheduling.annotation.EnableScheduling;
-import org.springframework.web.client.RestTemplate;
-
 import java.io.IOException;
 
 @EnableAsync
@@ -28,13 +26,6 @@ public class StarryApplication {
     public static void main(String[] args) {
         SpringApplication.run(StarryApplication.class, args);
     }
-
-    @Bean
-    @Qualifier(value = "restTemplate")
-    public RestTemplate restTemplate() {
-        return new RestTemplate();
-    }
-
 
     @Bean
     @Qualifier(value = "zk")

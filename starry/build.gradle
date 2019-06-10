@@ -1,11 +1,15 @@
+//定义
+ext {
+    springBootVersion = "2.1.5.RELEASE"
+}
+
 //应用于gradle 编译
 buildscript {
-    //定义
     ext {
         springBootVersion = "2.1.5.RELEASE"
     }
-    repositories {
 
+    repositories {
 
         maven { url 'file:/Users/shch/.m2/repository'} //使用file协议，本地仓库
         //maven 中央仓库
@@ -14,7 +18,7 @@ buildscript {
 
     dependencies {
         // 指定gradle spring boot plugin 版本 用于spring boot 版本依赖控制
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:$springBootVersion")
     }
 }
 
@@ -24,9 +28,10 @@ subprojects {
     //指定中央仓库 项目使用
     repositories {
 
-        maven { url 'file:/Users/shch/.m2/repository'} //使用file协议，本地仓库
         //maven 中央仓库
         mavenCentral()
+        //使用file协议，本地仓库
+        maven { url 'file:/Users/shch/.m2/repository'}
     }
 
     //应用插件
@@ -52,10 +57,18 @@ subprojects {
 
     //依赖
     dependencies {
-        testCompile('org.springframework.boot:spring-boot-starter-test')
-        
-        compile('org.springframework.boot:spring-boot-starter')
-        
+       // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-test
+        testCompile group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: "$springBootVersion"
+
+        testCompile group: 'junit', name: 'junit', version: '4.12'
+
+        // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter
+        compile group: 'org.springframework.boot', name: 'spring-boot-starter', version: "$springBootVersion"
+
+        // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web
+        compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version:"$springBootVersion"
+
+
         compile group: 'com.alibaba', name: 'dubbo', version: '2.6.6'
 
         compile group: 'org.projectlombok', name: 'lombok', version: '1.18.6'
