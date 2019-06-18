@@ -1,6 +1,7 @@
 package shch91.controller;
 
 
+import com.alibaba.dubbo.rpc.service.GenericService;
 import com.alibaba.fastjson.JSON;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.base.Strings;
@@ -21,19 +22,13 @@ import shch91.repo.mapper.employees.TmpMapper;
 import shch91.repo.mapper.sakila.ActorMapper;
 import shch91.request.User;
 import javax.annotation.Resource;
-import java.time.LocalDate;
 import java.util.List;
 import java.util.Set;
 import java.util.Vector;
-import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 @Slf4j
 @RestController
 public class HelloController {
-
-    private ReentrantReadWriteLock lock = new ReentrantReadWriteLock();
-
-    private static final LocalDate beginDate = LocalDate.of(2018, 1, 1);
 
     @Resource
     private ActorMapper actorMapper;
@@ -56,6 +51,9 @@ public class HelloController {
     @Autowired
     DemoService demoService;
 
+    @Autowired
+    GenericService genericService;
+
 
     @RequestMapping("/hello/id")
     @Transactional(rollbackFor = {Exception.class})
@@ -71,8 +69,6 @@ public class HelloController {
         //throw new RuntimeException("insert");
 
     }
-
-
 
 
     @RequestMapping("/first")
@@ -129,21 +125,31 @@ public class HelloController {
 
     @RequestMapping("/dubbo")
     @ResponseBody
-    public User testfdsa(){
+    public User testfdsa() {
 
-        User str=demoService.sayHello("dubbo");
+        User str = demoService.sayHello("dubbo");
 
         log.info(JSON.toJSONString(str));
         return str;
 
     }
 
+    //泛化调用begin
+    @RequestMapping("/gene")
+    public @ResponseBody
+    String fdsaf() {
+
+        Object result = genericService.$invoke("eat", new String[]{"java.lang.Long"}, new Object[]{1L});
+        log.info(JSON.toJSONString(result));
+        return "OK";
+    }
+
 
     @RequestMapping("/set")
     @ResponseBody
-    public Set<Integer> fds(){
+    public Set<Integer> fds() {
 
-        Set<Integer> ret=demoService.getSetInteger();
+        Set<Integer> ret = demoService.getSetInteger();
 
         log.info(JSON.toJSONString(ret));
         return ret;

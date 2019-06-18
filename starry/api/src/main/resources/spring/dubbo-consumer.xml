@@ -11,4 +11,6 @@
 
     <dubbo:reference id="demoService" check="true" interface="shch91.inter.DemoService"/>
 
+
+    <dubbo:reference id="genericService" interface="com.alibaba.dubbo.rpc.service.GenericService"/>
 </beans>
