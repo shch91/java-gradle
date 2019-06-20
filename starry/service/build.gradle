@@ -10,7 +10,7 @@ repositories {
 
 dependencies {
     compile project(":repo")
-    compile group: 'org.apache.zookeeper', name: 'zookeeper', version: '3.4.14'
+    compile group: 'org.apache.zookeeper', name: 'zookeeper', version: '3.5.5'
 
 
 }
