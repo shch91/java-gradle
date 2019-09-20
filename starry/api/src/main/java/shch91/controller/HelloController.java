@@ -14,6 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import shch91.enums.Type;
 import shch91.inter.DemoService;
 import shch91.repo.daoentity.Actor;
 import shch91.repo.daoentity.Salary;
@@ -127,7 +128,7 @@ public class HelloController {
     @ResponseBody
     public User testfdsa() {
 
-        User str = demoService.sayHello("dubbo");
+        User str = demoService.sayHello(Type.ONE);
 
         log.info(JSON.toJSONString(str));
         return str;
