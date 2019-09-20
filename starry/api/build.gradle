@@ -18,6 +18,6 @@ dependencies {
 
     compile group: 'com.rabbitmq', name: 'amqp-client', version: '5.7.0'
     
-    compile ("contract:inter:0.0.6-SNAPSHOT")
+    compile ("contract:inter:0.0.7-SNAPSHOT")
 
 }
