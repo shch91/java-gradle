@@ -10,6 +10,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import shch91.StarryApplication;
+import shch91.enums.Type;
 import shch91.inter.DemoService;
 import shch91.repo.daoentity.Actor;
 import shch91.repo.daoentity.Salary;
@@ -48,9 +49,24 @@ public class DemoTest {
     }
 
     @Test
-    public void fdsa() throws ExecutionException, InterruptedException {
-        User str=demoService.sayHello("dubbo");
+    public void fdsa() {
+        User str=demoService.sayHello(Type.ONE);
         log.info(JSON.toJSONString(str));
+
+    }
+
+    @Test
+    public  void fgfdsds() throws ExecutionException, InterruptedException {
+        CompletableFuture<Integer> future = CompletableFuture.supplyAsync(() -> {
+            return 100;
+        });
+        CompletableFuture<String> f = future.thenCompose( i -> {
+            return CompletableFuture.supplyAsync(() -> {
+                return (i * 10) + "";
+            });
+        });
+
+        System.out.println(f.get());
 
     }
 }

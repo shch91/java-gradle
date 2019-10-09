@@ -1,4 +1,4 @@
-rootProject.name = 'starry'
+rootProject.name = 'Spring-boot'
 include 'common'
 include 'api'
 include 'repo'
