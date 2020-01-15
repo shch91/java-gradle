@@ -52,10 +52,6 @@ public class HelloController {
     @Autowired
     DemoService demoService;
 
-    @Autowired
-    GenericService genericService;
-
-
     @RequestMapping("/hello/id")
     @Transactional(rollbackFor = {Exception.class})
     public int add() {
@@ -134,17 +130,6 @@ public class HelloController {
         return str;
 
     }
-
-    //泛化调用begin
-    @RequestMapping("/gene")
-    public @ResponseBody
-    String fdsaf() {
-
-        Object result = genericService.$invoke("eat", new String[]{"java.lang.Long"}, new Object[]{1L});
-        log.info(JSON.toJSONString(result));
-        return "OK";
-    }
-
 
     @RequestMapping("/set")
     @ResponseBody
