@@ -36,9 +36,9 @@ public class ZkMaster {
             }catch (KeeperException.NoNodeException e){
                 return  false;
             }catch (KeeperException.ConnectionLossException e){
-                log.info("[ZkMaster.checkMaster] connection lossed");
+                //log.info("[ZkMaster.checkMaster] connection lossed");
             }  catch (KeeperException e) {
-                log.info("[ZkMaster.KeeperException] error");
+                //log.info("[ZkMaster.KeeperException] error");
             }
         }
     }
@@ -53,9 +53,9 @@ public class ZkMaster {
                 isLeader=false;
                 break;
             }catch (KeeperException.ConnectionLossException e){
-                log.info("[ZkMaster.runForMaster] connection lossed");
+               // log.info("[ZkMaster.runForMaster] connection lossed");
             } catch (KeeperException e) {
-                log.info("[ZkMaster.KeeperException] error");
+               // log.info("[ZkMaster.KeeperException] error");
             }
             if(checkMaster()){
                 break;

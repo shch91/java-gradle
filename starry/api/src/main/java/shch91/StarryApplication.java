@@ -32,6 +32,7 @@ public class StarryApplication {
     public ZooKeeper createZookeeper(@Value("${zookeeper.server}") String servers) throws IOException {
         return new ZooKeeper(servers, 5000, new Watcher() {
             // 监控所有被触发的事件
+            @Override
             public void process(WatchedEvent event) {
             }
         });
