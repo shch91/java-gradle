@@ -69,7 +69,7 @@ subprojects {
         compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version:"$springBootVersion"
 
 
-        compile group: 'com.alibaba', name: 'dubbo', version: '2.6.6'
+        compile group: 'com.alibaba', name: 'dubbo', version: '2.6.7'
 
         compile group: 'org.projectlombok', name: 'lombok', version: '1.18.6'
 
