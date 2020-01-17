@@ -1,4 +1,4 @@
-rootProject.name = 'Spring-boot'
+rootProject.name = 'java-gradle'
 include 'common'
 include 'api'
 include 'repo'
