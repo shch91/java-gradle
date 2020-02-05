@@ -23,6 +23,7 @@ import shch91.repo.mapper.employees.TmpMapper;
 import shch91.repo.mapper.sakila.ActorMapper;
 import shch91.request.User;
 import javax.annotation.Resource;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 import java.util.Vector;
@@ -143,4 +144,10 @@ public class HelloController {
     }
 
 
+    public static void main(String[] args) {
+        List<String> as=new ArrayList<String>();
+        as.add("2");
+        String ab=null;
+        System.out.println(as.contains(ab));
+    }
 }
