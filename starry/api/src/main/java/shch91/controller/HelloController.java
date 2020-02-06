@@ -1,7 +1,6 @@
 package shch91.controller;
 
 
-import com.alibaba.dubbo.rpc.service.GenericService;
 import com.alibaba.fastjson.JSON;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.base.Strings;
@@ -23,10 +22,7 @@ import shch91.repo.mapper.employees.TmpMapper;
 import shch91.repo.mapper.sakila.ActorMapper;
 import shch91.request.User;
 import javax.annotation.Resource;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
-import java.util.Vector;
+import java.util.*;
 
 @Slf4j
 @RestController
@@ -145,9 +141,28 @@ public class HelloController {
 
 
     public static void main(String[] args) {
-        List<String> as=new ArrayList<String>();
-        as.add("2");
-        String ab=null;
-        System.out.println(as.contains(ab));
+        List<String> ans=letterCombinations("234");
+        for(String it:ans){
+            System.out.println(it);
+        }
+    }
+
+    public  static List<String> letterCombinations(String digits) {
+        LinkedList<String> ans = new LinkedList<String>();
+        if(digits.isEmpty()) {
+            return ans;
+        }
+        String[] mapping = new String[] {"0", "1", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
+        ans.add("");
+        for(int i =0; i<digits.length();i++){
+            int x = Character.getNumericValue(digits.charAt(i));
+            while(ans.peek().length()==i){
+                String t = ans.remove();
+                for(char s : mapping[x].toCharArray()) {
+                    ans.add(t + s);
+                }
+            }
+        }
+        return ans;
     }
 }
