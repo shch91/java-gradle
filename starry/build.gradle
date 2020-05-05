@@ -22,6 +22,10 @@ buildscript {
     }
 }
 
+allprojects {
+
+}
+
 // 所有子项目的通用配置
 subprojects {
 
@@ -57,15 +61,14 @@ subprojects {
 
     //依赖
     dependencies {
-       // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-test
+
         testCompile group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: "$springBootVersion"
 
         testCompile group: 'junit', name: 'junit', version: '4.12'
 
-        // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter
+
         compile group: 'org.springframework.boot', name: 'spring-boot-starter', version: "$springBootVersion"
 
-        // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web
         compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version:"$springBootVersion"
 
 
@@ -86,15 +89,6 @@ subprojects {
         compile group: 'org.springframework', name: 'spring-jdbc', version: '5.1.7.RELEASE'
 
         compile group: 'com.github.pagehelper', name: 'pagehelper', version: '5.1.10'
-
-
-
-
-
     }
 
-    //这里一定得要。在多模块下，不然编译失败，因为不会把信赖模块给打包。
-    jar {
-        enabled = true
-    }
 }

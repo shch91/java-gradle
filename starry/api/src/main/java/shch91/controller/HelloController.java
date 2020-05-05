@@ -6,6 +6,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.base.Strings;
 import com.google.common.collect.Lists;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang.time.DateUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
@@ -21,6 +22,8 @@ import shch91.repo.mapper.employees.SalaryMapper;
 import shch91.repo.mapper.employees.TmpMapper;
 import shch91.repo.mapper.sakila.ActorMapper;
 import shch91.request.User;
+
+import javax.annotation.PostConstruct;
 import javax.annotation.Resource;
 import java.util.*;
 
@@ -139,30 +142,21 @@ public class HelloController {
 
     }
 
-
-    public static void main(String[] args) {
-        List<String> ans=letterCombinations("234");
-        for(String it:ans){
-            System.out.println(it);
-        }
-    }
-
-    public  static List<String> letterCombinations(String digits) {
-        LinkedList<String> ans = new LinkedList<String>();
-        if(digits.isEmpty()) {
-            return ans;
-        }
-        String[] mapping = new String[] {"0", "1", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
-        ans.add("");
-        for(int i =0; i<digits.length();i++){
-            int x = Character.getNumericValue(digits.charAt(i));
-            while(ans.peek().length()==i){
-                String t = ans.remove();
-                for(char s : mapping[x].toCharArray()) {
-                    ans.add(t + s);
-                }
+    @PostConstruct
+    public void fdsa() {
+        int no = 10001;
+        int t=0;
+        while (t < 10) {
+            try {
+                Actor list = actorMapper.select(1);
+                log.info("add salary ={}", JSON.toJSONString(list));
+            } catch (Exception e) {
+                log.error("insert  salary error ", e);
+            }finally{
+                t++;
             }
+
         }
-        return ans;
     }
+
 }

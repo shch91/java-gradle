@@ -109,9 +109,9 @@ public class EmployeesDataBaseConfig {
     @Bean(name = "primarySqlSessionFactory")
     public SqlSessionFactory primarySqlSessionFactory(@Qualifier("primaryDataSource") DataSource primaryDataSource) throws Exception {
         final SqlSessionFactoryBean sessionFactory = new SqlSessionFactoryBean();
-        sessionFactory.setDataSource(primaryDataSource);  // 设置数据源bean
+        sessionFactory.setDataSource(primaryDataSource);
         sessionFactory.setMapperLocations(new PathMatchingResourcePatternResolver()
-                .getResources(EmployeesDataBaseConfig.MAPPER_LOCATION));  // 设置mapper文件路径
+                .getResources(EmployeesDataBaseConfig.MAPPER_LOCATION));
 
         return sessionFactory.getObject();
     }

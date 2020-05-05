@@ -12,7 +12,6 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import shch91.StarryApplication;
 import shch91.enums.Type;
 import shch91.inter.DemoService;
-import shch91.repo.daoentity.Actor;
 import shch91.repo.daoentity.Salary;
 import shch91.repo.mapper.employees.SalaryMapper;
 import shch91.repo.mapper.sakila.ActorMapper;
@@ -27,7 +26,6 @@ import java.util.concurrent.ExecutionException;
 @Slf4j
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest(classes = StarryApplication.class)
-
 public class DemoTest {
     @Resource
     private ActorMapper actorMapper;
@@ -40,11 +38,11 @@ public class DemoTest {
 
     @Test
     public void dtuy(){
-        Actor ae= actorMapper.select(32);
+       /* Actor ae= actorMapper.select(32);
         String str= JSONUtils.toJSONString(ae);
-        log.info(str);
+        log.info(str);*/
 
-        List<Salary> lists=salaryMapper.getAll();
+        List<Salary> lists=salaryMapper.getByEmpNo(10006);
         log.info(JSONUtils.toJSONString(lists));
     }
 

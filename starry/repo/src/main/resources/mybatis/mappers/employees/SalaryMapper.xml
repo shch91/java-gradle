@@ -4,6 +4,13 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="shch91.repo.mapper.employees.SalaryMapper">
 
+    <resultMap id="BaseResultMap" type="shch91.repo.daoentity.Salary">
+        <result column="emp_no" property="empNo"  jdbcType="INTEGER"/>
+        <result column="salary" property="salary" jdbcType="INTEGER"/>
+        <result column="from_date" property="fromDate" jdbcType="DATE"/>
+        <result column="to_date" property="toDate" jdbcType="DATE"/>
+    </resultMap>
+
     <!-- 开启基于redis的二级缓存 -->
     <!--<cache type="RedisCache"/>-->
      <sql id="allColumn">
@@ -15,10 +22,10 @@
        values (#{empNo},#{salary},#{fromDate},#{toDate})
    </insert>
 
-    <select id="getByEmpNo" parameterType="string" resultType="shch91.repo.daoentity.Salary">
+    <select id="getByEmpNo" resultMap="BaseResultMap">
         select <include refid="allColumn"/>
         from  salaries
-        where  emp_no=#{empNo}
+        where  emp_no =10001
     </select>
 
     <select id="allEmpNo" >
