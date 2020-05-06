@@ -1,8 +1,12 @@
 plugins {
     id 'java'
+
 }
 
-version 'unspecified'
+apply plugin:'maven-publish'
+
+group 'com.shch.inter'
+version '1.0.0'
 
 sourceCompatibility = 1.8
 
