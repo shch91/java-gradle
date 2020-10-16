@@ -1,0 +1,18 @@
+shch91/repo/mapper/sakila/ActorMapper.java
+ shch91.repo.mapper.sakila.ActorMapper
+shch91/repo/mapper/employees/SalaryMapper.java
+ shch91.repo.mapper.employees.SalaryMapper
+shch91/repo/RepoApplication.java
+ shch91.repo.RepoApplication
+shch91/repo/mapper/employees/TestMapper.java
+ shch91.repo.mapper.employees.TestMapper
+shch91/repo/daoentity/Actor.java
+ shch91.repo.daoentity.Actor
+shch91/repo/daoentity/Salary.java
+ shch91.repo.daoentity.Salary
+shch91/repo/mapper/employees/TmpMapper.java
+ shch91.repo.mapper.employees.TmpMapper
+shch91/repo/dataconfig/SakilaDataBaseConfig.java
+ shch91.repo.dataconfig.SakilaDataBaseConfig
+shch91/repo/dataconfig/EmployeesDataBaseConfig.java
+ shch91.repo.dataconfig.EmployeesDataBaseConfig

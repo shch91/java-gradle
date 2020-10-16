@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 引入项目配置文件 -->
+    <!-- <context:property-placeholder location="classpath:config/*.properties"/>-->
+
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>classpath:config/*.properties</value>
+            </list>
+        </property>
+    </bean>
+
+
+    <import resource="spring-bean.xml"/>
+    <import resource="spring-aop.xml"/>
+    <import resource="spring-redis.xml"/>
+
+    <!--dubbo-->
+    <import resource="dubbo-consumer.xml"/>
+    <import resource="dubbo-provider.xml"/>
+
+    <import resource="zookeeper-curator.xml"/>
+</beans>
