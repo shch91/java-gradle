@@ -15,9 +15,6 @@ repositories {
 dependencies {
 
     compile project(":service")
-
-    compile group: 'com.rabbitmq', name: 'amqp-client', version: '5.7.0'
-    
     compile ("contract:inter:0.0.7-SNAPSHOT")
 
 }
