@@ -89,6 +89,8 @@ subprojects {
         compile group: 'org.springframework', name: 'spring-jdbc', version: '5.1.7.RELEASE'
 
         compile group: 'com.github.pagehelper', name: 'pagehelper', version: '5.1.10'
+
+
     }
 
 }

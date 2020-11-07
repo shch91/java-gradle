@@ -15,6 +15,6 @@ repositories {
 dependencies {
 
     compile project(":service")
-    compile ("contract:inter:0.0.7-SNAPSHOT")
+    compile ("com.ldy:inter:0.0.7-SNAPSHOT")
 
 }

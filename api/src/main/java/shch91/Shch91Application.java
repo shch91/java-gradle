@@ -21,10 +21,10 @@ import java.io.IOException;
 @SpringBootApplication
 @ImportResource(locations = {"classpath:spring/spring.xml"})
 @Import(value = {ServiceApplication.class})
-public class StarryApplication {
+public class Shch91Application {
 
     public static void main(String[] args) {
-        SpringApplication.run(StarryApplication.class, args);
+        SpringApplication.run(Shch91Application.class, args);
     }
 
     @Bean
