@@ -1,4 +1,4 @@
-rootProject.name = 'gradle'
+rootProject.name = 'java-gradle'
 include 'com'
 include 'api'
 include 'repo'
