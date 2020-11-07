@@ -1,5 +1,8 @@
 package dubbotest;
 
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -16,6 +19,7 @@ import shch91.repo.mapper.sakila.ActorMapper;
 
 import javax.annotation.Resource;
 import java.util.List;
+import java.util.Set;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 
@@ -33,29 +37,38 @@ public class DemoTest {
     @Autowired
     private DemoService demoService;
 
+    @Autowired
+    private DemoService demoServiceback;
+
     @Test
-    public void dtuy(){
+    public void dtuy() {
        /* Actor ae= actorMapper.select(32);
         String str= JSONUtils.toJSONString(ae);
         log.info(str);*/
 
-        List<Salary> lists=salaryMapper.getByEmpNo();
+        List<Salary> lists = salaryMapper.getByEmpNo();
 
+    }
+    @Autowired
+    private ObjectMapper objectMapper;
+
+    @Test
+    public void fdsa()  {
+        User str = demoService.sayHello(Type.ONE);
+       Set<Integer>  re=demoServiceback.getSetInteger();
+        try {
+            System.out.println( objectMapper.writeValueAsString(str)+"-------"+objectMapper.writeValueAsString(re));
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
     }
 
     @Test
-    public void fdsa() {
-        User str=demoService.sayHello(Type.ONE);
-
-
-    }
-
-    @Test
-    public  void fgfdsds() throws ExecutionException, InterruptedException {
+    public void fgfdsds() throws ExecutionException, InterruptedException {
         CompletableFuture<Integer> future = CompletableFuture.supplyAsync(() -> {
             return 100;
         });
-        CompletableFuture<String> f = future.thenCompose( i -> {
+        CompletableFuture<String> f = future.thenCompose(i -> {
             return CompletableFuture.supplyAsync(() -> {
                 return (i * 10) + "";
             });
