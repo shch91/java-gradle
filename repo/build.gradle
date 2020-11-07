@@ -13,5 +13,6 @@ repositories {
 
 dependencies {
     compile project(":com")
-  
+    compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.22'
+
 }

@@ -27,8 +27,7 @@ public class Shch91Application {
         SpringApplication.run(Shch91Application.class, args);
     }
 
-    @Bean
-    @Qualifier(value = "zk")
+    @Bean(value = "zk")
     public ZooKeeper createZookeeper(@Value("${zookeeper.server}") String servers) throws IOException {
         return new ZooKeeper(servers, 5000, new Watcher() {
             // 监控所有被触发的事件

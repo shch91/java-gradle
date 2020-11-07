@@ -11,5 +11,7 @@
 
     <dubbo:reference id="demoService" check="true" interface="shch91.inter.DemoService" protocol="dubbo" timeout="1000"/>
 
-
+    <!--
+    <dubbo:reference id="demoServiceback" check="true" interface="shch91.inter.DemoService" protocol="dubbo" timeout="1000"/>
+  -->
 </beans>

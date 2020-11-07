@@ -31,7 +31,7 @@ subprojects {
 
     //指定中央仓库 项目使用
     repositories {
-
+        jcenter()
         //maven 中央仓库
         mavenCentral()
         //使用file协议，本地仓库
@@ -90,6 +90,9 @@ subprojects {
 
         compile group: 'com.github.pagehelper', name: 'pagehelper', version: '5.1.10'
 
+        compile group: 'org.apache.curator', name: 'curator-framework', version: '5.1.0'
+
+        compile group: 'org.aspectj', name: 'aspectjweaver', version: '1.9.6'
 
     }
 

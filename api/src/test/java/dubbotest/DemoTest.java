@@ -1,21 +1,18 @@
 package dubbotest;
 
-import com.alibaba.druid.support.json.JSONUtils;
-import com.alibaba.fastjson.JSON;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import shch91.Shch91Application;
-import shch91.enums.Type;
 import shch91.inter.DemoService;
+import shch91.inter.enums.Type;
+import shch91.inter.request.User;
 import shch91.repo.daoentity.Salary;
 import shch91.repo.mapper.employees.SalaryMapper;
 import shch91.repo.mapper.sakila.ActorMapper;
-import shch91.request.User;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -34,7 +31,7 @@ public class DemoTest {
     private SalaryMapper salaryMapper;
 
     @Autowired
-    DemoService demoService;
+    private DemoService demoService;
 
     @Test
     public void dtuy(){
@@ -42,14 +39,14 @@ public class DemoTest {
         String str= JSONUtils.toJSONString(ae);
         log.info(str);*/
 
-        List<Salary> lists=salaryMapper.getByEmpNo(10006);
-        log.info(JSONUtils.toJSONString(lists));
+        List<Salary> lists=salaryMapper.getByEmpNo();
+
     }
 
     @Test
     public void fdsa() {
         User str=demoService.sayHello(Type.ONE);
-        log.info(JSON.toJSONString(str));
+
 
     }
 
