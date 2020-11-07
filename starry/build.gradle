@@ -57,7 +57,7 @@ subprojects {
     //设置版本
     version '0.0.1-SNAPSHOT'
 
-    description 'java-gradle'
+    description 'gradle'
 
     //依赖
     dependencies {

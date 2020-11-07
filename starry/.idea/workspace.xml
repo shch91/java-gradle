@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7c05ef02-e038-4d4e-b255-c75dc074d1bc" name="Default Changelist" comment="" />
+    <list default="true" id="7c05ef02-e038-4d4e-b255-c75dc074d1bc" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/com/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/build/libs/common-1.0-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/build/tmp/jar/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/com/build/tmp/jar/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/repo/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/repo/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -70,33 +78,7 @@
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
   </component>
-  <component name="RunManager" selected="Application.text">
-    <configuration name="HelloController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="shch91.controller.HelloController" />
-      <module name="java-gradle.api.main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="shch91.controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="text" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="shch91.text" />
-      <module name="java-gradle.api.main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="shch91.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Spring Boot.StarryApplication">
     <configuration name="DemoTest.dtuy" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -172,19 +154,15 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.HelloController" />
       <item itemvalue="Gradle.DemoTest.dtuy" />
       <item itemvalue="Gradle.starry:inter [publishToMavenLocal]" />
       <item itemvalue="Spring Boot.StarryApplication" />
-      <item itemvalue="Application.text" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.text" />
         <item itemvalue="Gradle.starry:inter [publishToMavenLocal]" />
         <item itemvalue="Spring Boot.StarryApplication" />
         <item itemvalue="Gradle.DemoTest.dtuy" />
-        <item itemvalue="Application.HelloController" />
       </list>
     </recent_temporary>
   </component>
@@ -228,6 +206,7 @@
       <workItem from="1588564784096" duration="13440000" />
       <workItem from="1588856353611" duration="65000" />
       <workItem from="1597552291031" duration="1591000" />
+      <workItem from="1604725511445" duration="210000" />
     </task>
     <task id="LOCAL-00001" summary="we">
       <created>1580989579285</created>
@@ -247,6 +226,14 @@
     <option name="LAST_COMMIT_MESSAGE" value="we" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="184" y="125" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604725685849">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="184" y="125" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.877@0.23.1440.877" timestamp="1604725685849" />
+    <state x="553" y="370" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1604725516066">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="553" y="370" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.23.1440.877@0.23.1440.877" timestamp="1604725516066" />
     <state width="1398" height="194" key="GridCell.Tab.0.bottom" timestamp="1597578426596">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
@@ -263,10 +250,10 @@
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state width="1398" height="194" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1597578426595" />
-    <state x="221" y="100" key="SettingsEditor" timestamp="1597552374353">
+    <state x="221" y="66" key="SettingsEditor" timestamp="1604725768050">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state x="221" y="100" key="SettingsEditor/0.23.1440.877@0.23.1440.877" timestamp="1597552374353" />
+    <state x="221" y="66" key="SettingsEditor/0.23.1440.877@0.23.1440.877" timestamp="1604725768050" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
