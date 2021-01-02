@@ -10,7 +10,9 @@ repositories {
 
 dependencies {
     compile project(":repo")
-    compile group: 'org.apache.zookeeper', name: 'zookeeper', version: '3.5.5'
-
+    compile (group: 'org.apache.zookeeper', name: 'zookeeper', version: '3.5.5'){
+        exclude(group: 'org.slf4j', module: 'slf4j-log4j12')
+    }
+    implementation 'org.apache.curator:curator-recipes:5.1.0'
 
 }
