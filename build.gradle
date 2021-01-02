@@ -14,6 +14,7 @@ buildscript {
         maven { url 'file:/Users/shch/.m2/repository'} //使用file协议，本地仓库
         //maven 中央仓库
         mavenCentral()
+
     }
 
     dependencies {
@@ -31,15 +32,19 @@ subprojects {
 
     //指定中央仓库 项目使用
     repositories {
-        jcenter()
+
         //maven 中央仓库
         mavenCentral()
+
+        jcenter()
+
         //使用file协议，本地仓库
-        maven { url 'file:/Users/shch/.m2/repository'}
+
+
     }
 
     //应用插件
-
+    apply plugin: 'maven'
     apply plugin: 'java-library'
     apply plugin: 'maven-publish'
     apply plugin: 'java'
@@ -52,12 +57,30 @@ subprojects {
     sourceCompatibility = 1.8
 
     //设置group id
-    group 'com.starry'
+    group 'com.shch91'
     
     //设置版本
     version '0.0.1-SNAPSHOT'
 
     description 'gradle'
+
+
+    // 获取本地仓库路径
+    def localRepositoryPath = 'file://' + new File(System.getProperty('user.home'), '.m2/repository').absolutePath
+    //打包至本地仓库配置
+    uploadArchives {
+        repositories {
+            //mavenDeployer 需要依赖 apply plugin: 'maven'
+            mavenDeployer   {
+                repository(url: localRepositoryPath)
+                pom.project {
+                    name = project.name        // 当前项目名称
+                    version = project.version   //当前项目版本  0.0.1
+                    groupId = project.group     //  当前项目组  com.xxx
+                }
+            }
+        }
+    }
 
     //依赖
     dependencies {

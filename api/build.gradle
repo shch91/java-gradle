@@ -4,17 +4,12 @@ plugins {
 
 group 'com.shch91'
 version '1.0-SNAPSHOT'
-
 sourceCompatibility = 1.8
-
-repositories {
-
-}
 
 
 dependencies {
 
     compile project(":service")
-    compile ("com.ldy:inter:0.0.7-SNAPSHOT")
+    compile files('/Users/shch/.m2/repository/com/ldy/inter/0.0.7/inter-0.0.7.jar')
 
 }
